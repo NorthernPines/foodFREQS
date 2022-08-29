@@ -1,14 +1,18 @@
-const newFormHandler = async (event) => {
+const newRecipeHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const recipeName = document.querySelector('#project-name').value.trim();
+  const ingredientName = document.querySelector('#ingredient-name').value.trim();
+  const ingredientQty = document.querySelector('#ingredient-quantity').value.trim();
+  const ingredientUnit = document.querySelector('#ingredient-quantity').value.trim();
+  const instructions = document.querySelector('#project-desc').value.trim();
 
-  if (name && needed_funding && description) {
+  if (recipeName && ingredientName && ingredientQty && ingredientUnit && instructions) {
+    // WAIT FOR TRAVIS TO EDIT THIS ROUTE
     const response = await fetch(`/api/projects`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      // WAIT FOR BRIAN TO EDIT THIS ROUTE
+      body: JSON.stringify({ recipeName, ingredientName, ingredientQty, ingredientUnit, instructions }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -17,15 +21,15 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to upload recipe');
     }
   }
 };
 
-const delButtonHandler = async (event) => {
+const delRecipeHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-
+// WAIT FOR TRAVIS TO EDIT THIS ROUTE
     const response = await fetch(`/api/projects/${id}`, {
       method: 'DELETE',
     });
@@ -40,8 +44,8 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', newRecipeHandler);
 
 document
   .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  .addEventListener('click', delRecipeHandler);
