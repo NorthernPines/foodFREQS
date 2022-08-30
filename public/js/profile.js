@@ -1,17 +1,17 @@
 const newRecipeHandler = async (event) => {
   event.preventDefault();
 
-  const recipeName = document.querySelector('#project-name').value.trim();
+  const recipeName = document.querySelector('#recipe-name').value.trim();
   const ingredientName = document.querySelector('#ingredient-name').value.trim();
-  const ingredientQty = document.querySelector('#ingredient-quantity').value.trim();
-  const ingredientUnit = document.querySelector('#ingredient-quantity').value.trim();
-  const instructions = document.querySelector('#project-desc').value.trim();
+  const ingredientQty = document.querySelector('#ingredient-qty').value.trim();
+  const ingredientUnit = document.querySelector('#ingredient-unit').value.trim();
+  const instructions = document.querySelector('#instructions').value.trim();
 
   if (recipeName && ingredientName && ingredientQty && ingredientUnit && instructions) {
     // WAIT FOR TRAVIS TO EDIT THIS ROUTE
     const response = await fetch(`/api/projects`, {
       method: 'POST',
-      // WAIT FOR BRIAN TO EDIT THIS ROUTE
+      // WAIT FOR BRIAN TO EDIT THIS MODEL
       body: JSON.stringify({ recipeName, ingredientName, ingredientQty, ingredientUnit, instructions }),
       headers: {
         'Content-Type': 'application/json',
@@ -42,10 +42,6 @@ const delRecipeHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newRecipeHandler);
+document.querySelector('.new-recipe-form').addEventListener('submit', newRecipeHandler);
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delRecipeHandler);
+// document.querySelector('.recipe-list').addEventListener('click', delRecipeHandler);
