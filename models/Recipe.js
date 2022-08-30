@@ -31,7 +31,6 @@ Recipe.init(
     instructions: {
 
     },
-
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
