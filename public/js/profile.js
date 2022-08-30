@@ -1,6 +1,8 @@
 const newRecipeHandler = async (event) => {
   event.preventDefault();
 
+  // THIS IS ALSO WHERE THE API CALL SHOULD GO
+
   const recipeName = document.querySelector('#recipe-name').value.trim();
   const ingredientName = document.querySelector('#ingredient-name').value.trim();
   const ingredientQty = document.querySelector('#ingredient-qty').value.trim();
