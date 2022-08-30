@@ -15,7 +15,13 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    ingredient_name: {
+      type: DataTypes.STRING,
+    },
+    ingredient_qty: {
+      type: DataTypes.INTEGER,
+    },
+    ingredient_unit: {
       type: DataTypes.STRING,
     },
     ingredients: {

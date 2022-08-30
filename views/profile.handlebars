@@ -6,35 +6,43 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Recipe:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-recipe-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="recipe-name">Recipe Name:</label>
+        <input class="form-input" type="text" id="recipe-name" name="recipe-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="ingredient-name">Ingredient Name:</label>
+        <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="ingredient-qty">Ingredient Quantity:</label>
+        <input class="form-input" type="number" id="ingredient-qty" name="ingredient-qty" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <label for="ingredient-unit">Ingredient Unit of Measurement:</label>
+        <input class="form-input" type="text" id="ingredient-unit" name="ingredient-unit" />
+      </div>
+      <div class="form-group">
+        <label for="instructions">Instructions:</label>
+        <textarea class="form-input" id="instructions" name="instructions"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create Recipe</button>
       </div>
     </form>
   </div>
 
   {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  <div class="col-md-6 recipe-list">
+    <h3>My Recipes:</h3>
 
     {{#each projects as |project|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/projects/{{project.id}}">{{project.name}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
