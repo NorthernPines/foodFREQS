@@ -19,7 +19,7 @@ Recipe.init(
       type: DataTypes.STRING,
     },
     ingredients: {
-      
+      // array of ingredient objects
     },
     
     instructions: {
