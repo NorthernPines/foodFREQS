@@ -1,13 +1,17 @@
+require('dotenv').config();
+
 const searchHandler = async (event) => {
     event.preventDefault();
   
     const searchRecipes = 'q=' + document.querySelector('#search-recipes').value.trim();
 
     // THIS SHOULD BE WHERE THE API CALL GOES
-    const appId = 'app_Id=07b9c326';
-    const appKey = 'app_key=8a07a672f9443f536dcc7f067c0e06fb';
+    const appId = '${process.env.API_ID}';
+    const appKey = '${process.env.API_KEY}';
     const baseQuery = 'https://api.edamam.com/api/recipes/v2?type=public';
     const apiReqStr = baseQuery + appId + appKey + searchRecipes;
+
+    console.log(apiReqStr);
 
   
     if (searchRecipes) {
