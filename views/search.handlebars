@@ -1,0 +1,24 @@
+<div class="row mt-4">
+  <div class="col">
+    <h3>Hungry? Enter any ingredient in your fridge and we'll get you cooking ASAP!</h3>
+
+    <form class="form new-recipe-form">
+      <div class="form-group">
+        <label for="search-recipes">Find Your FREQs:</label>
+        <input class="form-input" type="text" id="search-recipes" name="search-recipes" />
+        <button type="submit" class="btn btn-primary" id="search-btn">Search</button>
+      </div>
+    </form>
+
+    {{#each recipes as |recipe|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/recipes/{{recipe.id}}">{{recipe.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-success freq-food" data-id="{{recipe.id}}">ADD RECIPE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

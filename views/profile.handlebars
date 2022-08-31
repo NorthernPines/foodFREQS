@@ -5,52 +5,27 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Recipe:</h3>
+  <a href="/search"><button class="btn btn-primary display-flex justify-center my-2" type="submit">Find Your
+      FREQs</button></a>
+</div>
 
-    <form class="form new-recipe-form">
-      <div class="form-group">
-        <label for="recipe-name">Recipe Name:</label>
-        <input class="form-input" type="text" id="recipe-name" name="recipe-name" />
-      </div>
-      <div class="form-group">
-        <label for="ingredient-name">Ingredient Name:</label>
-        <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
-      </div>
-      <div class="form-group">
-        <label for="ingredient-qty">Ingredient Quantity:</label>
-        <input class="form-input" type="number" id="ingredient-qty" name="ingredient-qty" />
-      </div>
-      <div class="form-group">
-        <label for="ingredient-unit">Ingredient Unit of Measurement:</label>
-        <input class="form-input" type="text" id="ingredient-unit" name="ingredient-unit" />
-      </div>
-      <div class="form-group">
-        <label for="instructions">Instructions:</label>
-        <textarea class="form-input" id="instructions" name="instructions"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create Recipe</button>
-      </div>
-    </form>
-  </div>
+<div class="row mt-5">
+{{#if recipes.length}}
+<div class="col-md-6 recipe-list">
+  <h3>My FREQs:</h3>
 
-  {{#if recipes.length}}
-  <div class="col-md-6 recipe-list">
-    <h3>My FREQs:</h3>
-
-    {{#each recipes as |recipe|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/recipes/{{recipe.id}}">{{recipe.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{recipe.id}}">DELETE</button>
-      </div>
+  {{#each recipes as |recipe|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h5><a href="/recipes/{{recipe.id}}">{{recipe.name}}</a></h5>
     </div>
-    {{/each}}
+    <div class="col-md-4">
+      <button class="btn btn-sm btn-danger" data-id="{{recipe.id}}">Delete from FREQs</button>
+    </div>
   </div>
-  {{/if}}
+  {{/each}}
+</div>
+{{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
