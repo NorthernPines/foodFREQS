@@ -1,13 +1,18 @@
 const searchHandler = async (event) => {
     event.preventDefault();
   
-    const searchRecipes = document.querySelector('#search-recipes').value.trim();
+    const searchRecipes = 'q=' + document.querySelector('#search-recipes').value.trim();
 
     // THIS SHOULD BE WHERE THE API CALL GOES
+    const appId = 'app_Id=07b9c326';
+    const appKey = 'app_key=8a07a672f9443f536dcc7f067c0e06fb';
+    const baseQuery = 'https://api.edamam.com/api/recipes/v2?type=public';
+    const apiReqStr = baseQuery + appId + appKey + searchRecipes;
+
   
     if (searchRecipes) {
       // Send a GET request to the API endpoint
-      const response = await fetch('/api/recipes', {
+      const response = await fetch(apiReqStr, {
         method: 'GET',
         body: JSON.stringify({ searchRecipes }),
         headers: { 'Content-Type': 'application/json' },

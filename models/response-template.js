@@ -18,7 +18,7 @@
 //       {
 //         "recipe": {
 //           "uri": "string",
-//           "label": "string",
+//           "label": "string", // name of recipe
 //           "image": "string",
 //           "images": {
 //             "THUMBNAIL": {
