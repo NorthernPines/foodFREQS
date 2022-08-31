@@ -3,13 +3,13 @@ const Recipe = require('./Recipe');
 
 User.hasMany(Recipe, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  onDelete: 'CASCADE',
 });
 
 Recipe.belongsTo(User, {
-  foreignKey: 'user_id'
+
+  foreignKey: 'user_id',
+
 });
 
 module.exports = { User, Recipe };
-
-
