@@ -6,8 +6,10 @@ User.hasMany(Recipe, {
   onDelete: 'CASCADE'
 });
 
-Recipe.belongsTo(User, {
+Recipe.belongsToMany(User, {
   foreignKey: 'user_id'
 });
 
 module.exports = { User, Recipe };
+
+

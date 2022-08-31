@@ -13,7 +13,7 @@ Ingredient.init(
     },
     qty: {
 
-    },
+    },  
     name: {
       type: DataTypes.STRING,
       allowNull: false,
