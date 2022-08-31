@@ -4,6 +4,11 @@ const searchHandler = async (event) => {
     const searchRecipes = document.querySelector('#search-recipes').value.trim();
 
     // THIS SHOULD BE WHERE THE API CALL GOES
+    const appId = '07b9c326';
+    const appKey = '8a07a672f9443f536dcc7f067c0e06fb';
+    const baseQueryStr = 'https://api.edamam.com/api/recipes/v2?type=public';
+
+
   
     if (searchRecipes) {
       // Send a GET request to the API endpoint
