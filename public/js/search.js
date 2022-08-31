@@ -1,13 +1,13 @@
 const searchHandler = async (event) => {
     event.preventDefault();
   
-    const searchRecipes = document.querySelector('#search-recipes').value.trim();
+    const searchRecipes = 'q=' + document.querySelector('#search-recipes').value.trim();
 
     // THIS SHOULD BE WHERE THE API CALL GOES
-    const appId = '07b9c326';
-    const appKey = '8a07a672f9443f536dcc7f067c0e06fb';
-    const baseQueryStr = 'https://api.edamam.com/api/recipes/v2?type=public';
-
+    const appId = 'app_Id=07b9c326';
+    const appKey = 'app_key=8a07a672f9443f536dcc7f067c0e06fb';
+    const baseQuery = 'https://api.edamam.com/api/recipes/v2?type=public';
+    const apiReqStr = baseQuery + ;
 
   
     if (searchRecipes) {
