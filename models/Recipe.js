@@ -24,13 +24,13 @@ Recipe.init(
     ingredient_unit: {
       type: DataTypes.STRING,
     },
-    ingredients: {
+    //ingredients: {
       // array of ingredient objects
-    },
+    //},
     
-    instructions: {
+    //instructions: {
 
-    },
+   // },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
