@@ -1,10 +1,28 @@
-{{! <div class="form-group display-flex justify-center my-2"> }}
-{{! <label for="search-recipes" class="mt-1">Search Recipes/Ingredients:</label>
-  <input class="form-input mx-2" type="search" id="search-recipes" placeholder="Find your FREQs"/> }}
-<a href='search'></a><button
-  class='btn btn-primary display-flex justify-center my-2'
-  type='submit'
->Find Your FREQs</button>
-{{! </div> }}
+{{!-- <div class="form-group display-flex justify-center my-2"> --}}
+  {{!-- <label for="search-recipes" class="mt-1">Search Recipes/Ingredients:</label>
+  <input class="form-input mx-2" type="search" id="search-recipes" placeholder="Find your FREQs"/> --}}
+  <button class="btn btn-primary display-flex justify-center my-2" type="submit">Find Your FREQs</button>
+{{!-- </div> --}}
 
 <!-- Loop over each object in the projects array -->
+{{#each projects as |project| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <a href="/project/{{project.id}}">{{project.name}}</a>
+    </h2>
+    <p>
+      <span>{{project.ingredient_qty}}</span>
+      <span>{{project.ingredient_unit}}</span> of
+      <span>{{project.ingredient_name}}</span>
+    </p>
+    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{project.instructions}}
+    </p>
+  </div>
+</div>
+{{/each}}
