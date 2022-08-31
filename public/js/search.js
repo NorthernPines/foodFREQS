@@ -1,29 +1,31 @@
+require('dotenv').config();
+
 const searchHandler = async (event) => {
-    event.preventDefault();
-  
-    const searchRecipes = 'q=' + document.querySelector('#search-recipes').value.trim();
+  event.preventDefault();
 
-    // THIS SHOULD BE WHERE THE API CALL GOES
-    const appId = 'app_Id=07b9c326';
-    const appKey = 'app_key=8a07a672f9443f536dcc7f067c0e06fb';
-    const baseQuery = 'https://api.edamam.com/api/recipes/v2?type=public';
-    const apiReqStr = baseQuery + appId + appKey + searchRecipes;
+  const searchRecipes = document.querySelector('#search-recipes').value.trim();
+  const searchQuery = 'q=' + searchRecipes;
 
-  
-    if (searchRecipes) {
-      // Send a GET request to the API endpoint
-      const response = await fetch(apiReqStr, {
-        method: 'GET',
-        body: JSON.stringify({ searchRecipes }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/search');
-      } else {
-        alert(response.statusText);
-      }
+  // THIS SHOULD BE WHERE THE API CALL GOES
+  const appId = `app_Id=${process.env.API_ID}`;
+  const appKey = `app_key=${process.env.API_KEY}`;
+  const baseQuery = 'https://api.edamam.com/api/recipes/v2?type=public';
+  const apiReqStr = baseQuery + '&' + appId + '&' + appKey + '&' + searchQuery;
+
+  if (searchRecipes) {
+    // Send a GET request to the API endpoint
+    const response = await fetch(apiReqStr, {
+      method: 'GET',
+      body: JSON.stringify({ searchRecipes }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/search');
+    } else {
+      alert(response.statusText);
     }
-  };
+  }
+};
 
-  document.querySelector('#search-btn').addEventListener('submit', searchHandler);
+document.querySelector('#search-btn').addEventListener('submit', searchHandler);
