@@ -1,18 +1,24 @@
+require('dotenv').config(); 
+
+// Set up API Query String
+const baseURL = 'https://api.edamam.com/api/recipes/v2?type=public';
+const searchRecipes = 'q=' + document.querySelector('#search-recipes').value.trim();
+const appId = `app_id=${process.env.API_ID}`;
+const appKey = `app_key=${process.env.API_KEY}`;
+    
+const queryArr = [baseURL, searchRecipes, appId, appKey];
+
+// Final variable that includes API credentials and user search
+const apiQuery = queryArr.join('&');
+
 const searchHandler = async (event) => {
     event.preventDefault();
-  
-    const searchRecipes = 'q=' + document.querySelector('#search-recipes').value.trim() + '&';
 
     // THIS SHOULD BE WHERE THE API CALL GOES
-    const appId = 'app_Id=07b9c326&';
-    const appKey = 'app_key=8a07a672f9443f536dcc7f067c0e06fb&';
-    const baseQuery = 'https://api.edamam.com/api/recipes/v2?type=public&';
-    const apiReqStr = searchRecipes + baseQuery + appId + appKey;
-console.log(apiReqStr);
-  
+
     if (searchRecipes) {
       // Send a GET request to the API endpoint
-      const response = await fetch(apiReqStr, {
+      const response = await fetch(apiQuery, {
         method: 'GET',
         body: JSON.stringify({ searchRecipes }),
         headers: { 'Content-Type': 'application/json' },
