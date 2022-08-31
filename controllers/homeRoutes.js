@@ -2,11 +2,17 @@ const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+<<<<<<< HEAD
 //dont need most of this
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', { 
       recipes, 
+=======
+router.get('/', async (req, res) => {
+  try {
+    res.render('homepage', { 
+>>>>>>> d3e0370f3133df6b7ce3512c4e5f3bd3f9b1177b
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -20,7 +26,7 @@ router.get('/:profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.params.profile, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Recipes }],
+      include: [{ model: Recipe }],
     });
 
     const user = userData.get({ plain: true });
@@ -43,5 +49,9 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/search', (req, res) => {
+  res.render('search');
+})
 
 module.exports = router;
