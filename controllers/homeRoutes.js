@@ -2,17 +2,10 @@ const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-<<<<<<< HEAD
-//dont need most of this
+
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', { 
-      recipes, 
-=======
-router.get('/', async (req, res) => {
-  try {
-    res.render('homepage', { 
->>>>>>> d3e0370f3133df6b7ce3512c4e5f3bd3f9b1177b
       logged_in: req.session.logged_in 
     });
   } catch (err) {
