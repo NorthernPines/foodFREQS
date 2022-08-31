@@ -15,7 +15,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/recipe/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
