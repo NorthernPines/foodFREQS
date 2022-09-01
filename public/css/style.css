@@ -1,5 +1,5 @@
 header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 9px solid #8f4d33;
 }
 
 .no-button {
@@ -7,17 +7,26 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: green;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+  color: gold;
+  text-decoration: none;
+  transition-duration: 0.5s;
 }
 
 .box{
   width: 100%;
   text-align:center;
+}
+
+.homepagebtn {
+  cursor: pointer;
+}
+
+.background-color {
+  background-color: rgb(241, 241, 0);
 }
