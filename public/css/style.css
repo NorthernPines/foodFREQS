@@ -7,7 +7,7 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: green;
+  color: #904528;
   text-decoration: none;
   font-size: 100%;
 }
@@ -28,5 +28,5 @@ header, .project:not(:last-child) {
 }
 
 .background-color {
-  background-color: rgb(241, 241, 0);
+  background-color: #e3CD81ff;
 }
