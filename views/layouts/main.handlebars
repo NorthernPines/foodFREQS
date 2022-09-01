@@ -1,43 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FoodFREQS</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>FoodFREQS</title>
+    <script
+      src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
+      integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
+      crossorigin='anonymous'
+    ></script>
 
-<body class="background-color">
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">FoodFREQS</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile" class="no-button">Profile</a> |
-        <button class="no-button" id="logout">Logout</button>
-        {{else}}
-        <a href="/login" class="no-button">Login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-  </div>
+    <link rel='stylesheet' href='/css/jass.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
 
+  <body class='background-color'>
+    <div class='flex-column justify-space-around'>
+      <header class='display-flex justify-space-between align-center p-2'>
+        <h1>
+          <a href='/'>FoodFREQS</a>
+        </h1>
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <a href='/profile' class='no-button'>Profile</a>
+            |
+            <button class='no-button' id='logout'>Logout</button>
+          {{else}}
+            <a href='/login' class='no-button'>Login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class='container container-fluid mt-5'>
 
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+    </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
+  </body>
 
 </html>
