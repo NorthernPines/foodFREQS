@@ -15,19 +15,17 @@ const searchHandler = async (event) => {
     const response = await fetch(apiReqStr);
     const recipes = await response.json();
     if (response.ok) {
-      document.location.replace('/search');
-
       for (let i = 0; i < recipes.hits.length; i++) {
-        const recipeResultItems = document.createElement("li");
+        const recipeResultItems = document.createElement("p");
         const recipeTitle = document.createElement("p");
         const recipeImage = document.createElement("img");
         const addRecipe = document.createElement("button");
         const recipeResults = document.querySelector("#recipe-results");
-        recipeResults.appendChild(recipeResultItems);
         recipeTitle.setAttribute("class", "justify-space-between");
         recipeImage.setAttribute("src", `${recipes.hits[i].recipe.images.SMALL.url}`);
         recipeTitle.textContent = recipes.hits[i].recipe.label;
         addRecipe.textContent = "Add Recipe";
+        recipeResults.appendChild(recipeResultItems);
         recipeResultItems.appendChild(recipeTitle);
         recipeResultItems.appendChild(recipeImage);
         recipeResultItems.appendChild(addRecipe);
