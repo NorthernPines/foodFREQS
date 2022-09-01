@@ -11,5 +11,7 @@ Recipe.belongsTo(User, {
   foreignKey: 'user_id',
 
 });
+Recipe.hasOne(IngredientList,
+  )
 
 module.exports = { User, Recipe };
