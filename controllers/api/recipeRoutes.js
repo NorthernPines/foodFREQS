@@ -4,11 +4,16 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
+    console.log(req.body);
     const newRecipe = await Recipe.create({
-      recipeId: req.body.hits.recipe.uri,
-      user_id: req.session.user_id,
+      name: req.body.name,
+      img_url: req.body.img_url,
+      health_labels: req.body.health_labels,
+      ingredient_lines: req.body.ingredient_lines,
+      user_id: req.session.user_id
     });
-
+    console.log("here");
+    console.log(newRecipe);
     res.status(200).json(newRecipe);
   } catch (err) {
     res.status(400).json(err);
