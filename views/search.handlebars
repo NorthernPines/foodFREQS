@@ -10,15 +10,9 @@
       </div>
     </form>
 
-    {{#each recipes as |recipe|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/recipes/{{recipe.id}}">{{recipe.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-success freq-food" data-id="{{recipe.id}}">ADD RECIPE</button>
-      </div>
-    </div>
-    {{/each}}
+    <ul class="col-md-8" id="recipe-results"></ul>
+
   </div>
 </div>
+
+<script src="./js/search.js"></script>
