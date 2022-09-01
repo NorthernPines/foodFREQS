@@ -43,7 +43,9 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/search', (req, res) => {
-  res.render('search');
+  res.render('search', { 
+    logged_in: req.session.logged_in 
+  });
 })
 
 router.get('/recipe', (req, res) => {
