@@ -47,4 +47,8 @@ router.get('/search', (req, res) => {
   res.render('search');
 })
 
+router.get('/recipe', (req, res) => {
+  res.render('recipe');
+})
+
 module.exports = router;
