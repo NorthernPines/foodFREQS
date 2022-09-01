@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', { 
@@ -45,6 +44,10 @@ router.get('/login', (req, res) => {
 
 router.get('/search', (req, res) => {
   res.render('search');
+})
+
+router.get('/recipe', (req, res) => {
+  res.render('recipe');
 })
 
 module.exports = router;

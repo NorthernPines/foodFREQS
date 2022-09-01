@@ -5,7 +5,6 @@ class Recipe extends Model {}
 
 Recipe.init(
   {
-
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -17,28 +16,23 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    
     img_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
-
     date_added: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-
     health_labels: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
-
     ingredient_lines: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
-
     user_id: {
       type: DataTypes.INTEGER,
       references: {

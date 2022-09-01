@@ -4,43 +4,28 @@
   </div>
 </div>
 
-<!--profile picture-->
-
-
-<div>
-  <div class="container,col-sm-4"><img class="card-img-top-rounded" src="https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg">
-  
-  </div>
-   
-
-</div>
-
-
-
-
-
 <div class="row mt-4">
   <a href="/search"><button class="btn btn-primary display-flex justify-center my-2" type="submit">Find Your
       FREQs</button></a>
 </div>
 
-<div class="row mt-5">
-{{#if recipes.length}}
-<div class="col-md-6 recipe-list">
-  <h3>My FREQs:</h3>
+<div class="row display-flex justify-center mt-5">
+  {{#if recipes.length}}
+  <div class="col-md-6 recipe-list">
+    <h3 class="my-5">My FREQs:</h3>
 
-  {{#each recipes as |recipe|}}
-  <div class="row mb-2">
-    <div class="col-md-8">
-      <h5><a href="/recipes/{{recipe.id}}">{{recipe.name}}</a></h5>
+    {{#each recipes as |recipe|}}
+    <div class="row mb-2">
+      <div class="col-6">
+        <h5><a href="/recipe">{{recipe.name}}</a></h5>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-sm btn-danger" data-id="{{recipe.id}}">Delete from FREQs</button>
+      </div>
     </div>
-    <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id="{{recipe.id}}">Delete from FREQs</button>
-    </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
-{{/if}}
+  {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>

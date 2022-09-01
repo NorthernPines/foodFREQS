@@ -1,5 +1,30 @@
-header, .project:not(:last-child) {
+header,
+.project:not(:last-child) {
   border-bottom: 9px solid #8f4d33;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+.title {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #904528;
+  text-decoration: none;
+  font-size: 4rem;
+}
+
+.title:hover {
+  color: navy;
+  text-decoration: none;
+  transition-duration: 0.5s;
 }
 
 .no-button {
@@ -9,18 +34,18 @@ header, .project:not(:last-child) {
   cursor: pointer;
   color: #904528;
   text-decoration: none;
-  font-size: 100%;
+  font-size: 1.75rem;
 }
 
 .no-button:hover {
-  color: gold;
+  color: navy;
   text-decoration: none;
   transition-duration: 0.5s;
 }
 
-.box{
+.box {
   width: 100%;
-  text-align:center;
+  text-align: center;
 }
 
 .homepagebtn {
