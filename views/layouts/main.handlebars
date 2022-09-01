@@ -13,22 +13,21 @@
 
 <body class="background-color">
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="display-flex justify-space-between align-center">
       <h1>
-        <a href="/">FoodFREQS</a>
+        <a href="/" class="title mx-4">FoodFREQS</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile" class="no-button">Profile</a> |
-        <button class="no-button" id="logout">Logout</button>
+        <a href="/profile" class="no-button mx-3">Profile</a> |
+        <button class="no-button mx-3" id="logout">Logout</button>
         {{else}}
-        <a href="/login" class="no-button">Login</a>
+        <a href="/login" class="no-button mx-3">Login</a>
         {{/if}}
       </nav>
     </header>
     <main class="container container-fluid mt-5">
-      
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
