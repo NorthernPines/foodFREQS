@@ -10,6 +10,7 @@ The main goal of this project was to use all of our knowledge from module one an
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
+  - [Walk-Through Video](#walk-through-video)
   - [Technologies Used](#technologies-used)
   - [APIs Used](#apis-used)
   - [Contributors](#contributors)
@@ -28,6 +29,10 @@ In order to use our application successfully, there are a few steps to take:
 3. Once the results for every related recipe appears, you have the option to add them to your profile for later
 
 4. You can then return to your profile and view the recipes you added or delete them from your profile!
+
+## Walk-Through Video
+
+[![Watch Video!](https://img.youtube.com/vi/6bmqZA147GU/maxresdefault.jpg)](https://youtu.be/6bmqZA147GU)
 
 ## Technologies Used
 
