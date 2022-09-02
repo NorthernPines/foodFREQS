@@ -15,12 +15,15 @@
     <h3 class="my-5">My FREQs:</h3>
 
     {{#each recipes as |recipe|}}
-    <div class="row mb-2">
+    <div class="row mb-2 card">
       <div class="col-6">
         <h5><a href="/recipe">{{recipe.name}}</a></h5>
       </div>
       <div class="col-6">
         <button class="btn btn-sm btn-danger" data-id="{{recipe.id}}">Delete from FREQs</button>
+      </div>
+      <div>
+        <img src="{{recipe.img_url}}">
       </div>
     </div>
     {{/each}}

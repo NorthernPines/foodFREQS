@@ -1,15 +1,14 @@
 const delRecipeHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-// WAIT FOR TRAVIS TO EDIT THIS ROUTE
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/recipes/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete recipe');
     }
   }
 };
