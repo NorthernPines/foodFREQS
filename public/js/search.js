@@ -58,26 +58,22 @@ const searchHandler = async (event) => {
         e.preventDefault();
         const element = e.target;
         if (element.matches('button')) {
-          if (session.logged_in) {
-            const addedRecipe = {
-              name: element.parentElement.children[0].textContent,
-              img_url: element.parentElement.parentElement.children[0].getAttribute("src"),
-              health_labels: element.parentElement.children[2].textContent,
-              ingredient_lines: element.parentElement.children[1].textContent
-            }
-            console.log(addedRecipe);
-            fetch(`/api/recipes`, {
-              method: 'POST',
-              body: JSON.stringify(addedRecipe),
-              headers: {
-                'Content-Type': 'application/json',
-              }
-            })
-              .then((response) => console.log(response))
-              .catch((err) => console.log(err))
-          } else {
-            alert('Please log in to save recipes to your profile')
+          const addedRecipe = {
+            name: element.parentElement.children[0].textContent,
+            img_url: element.parentElement.parentElement.children[0].getAttribute("src"),
+            health_labels: element.parentElement.children[2].textContent,
+            ingredient_lines: element.parentElement.children[1].textContent
           }
+          console.log(addedRecipe);
+          fetch(`/api/recipes`, {
+            method: 'POST',
+            body: JSON.stringify(addedRecipe),
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          })
+            .then((response) => console.log(response))
+            .catch((err) => console.log(err))
         }
         alert('This recipe has been added to your Dashboard');
       });
