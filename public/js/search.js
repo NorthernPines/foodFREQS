@@ -5,8 +5,8 @@ const searchHandler = async (event) => {
   const searchQuery = 'q=' + searchRecipes;
 
   // THIS SHOULD BE WHERE THE API CALL GOES
-  const appId = `app_id=81dae0b7`;
-  const appKey = `app_key=348cf7bfd5457de6854604ca3dfe9fcd`;
+  const appId = `app_id=c91c5e97`;
+  const appKey = `app_key=5691538e0a506e104674b0f9cc8cac94`;
   const baseQuery = 'https://api.edamam.com/api/recipes/v2?type=public';
   const apiReqStr = baseQuery + '&' + searchQuery + '&' + appId + '&' + appKey;
 
@@ -56,6 +56,8 @@ const searchHandler = async (event) => {
 
       recipeResults.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
+        
         const element = e.target;
         if (element.matches('button')) {
           const addedRecipe = {
@@ -72,10 +74,12 @@ const searchHandler = async (event) => {
               'Content-Type': 'application/json',
             }
           })
-            .then((response) => console.log(response))
+            .then((response) => {
+              console.log(response)
+              alert('This recipe has been added to your FREQS!')
+            })
             .catch((err) => console.log(err))
         }
-        alert('This recipe has been added to your FREQS!');
       });
     } else {
       alert(response.statusText);
