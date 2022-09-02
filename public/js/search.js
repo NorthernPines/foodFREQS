@@ -75,7 +75,7 @@ const searchHandler = async (event) => {
             .then((response) => console.log(response))
             .catch((err) => console.log(err))
         }
-        alert('This recipe has been added to your Dashboard');
+        alert('This recipe has been added to your FREQS!');
       });
     } else {
       alert(response.statusText);
