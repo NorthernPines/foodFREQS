@@ -46,7 +46,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.destroy({
       where: {
-        recipeId: req.params.id,
+        id: req.params.id,
         user_id: req.session.user_id,
       },
     });
